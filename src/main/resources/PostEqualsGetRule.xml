@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<ruleset name="SpringRules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+  <description>
+These rules detect potential Spring issues.
+  </description>
+
+<rule  name="PostEqualsGetRule"
+  message="HTTP GET and HTTP POST should not invoke eachother. Limit access to only one HTTP verb per application function."
+  class="com.aspectsecurity.automation.example.pmd.rule.PostEqualsGetRule">
+  <description>
+  The following pattern should be avoided:
+  	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+	Instead limit HTTP verbs to one per application function.
+  </description>
+  <priority>3</priority>
+  <example>
+
+  </example>
+</rule>
+
+  </ruleset>
